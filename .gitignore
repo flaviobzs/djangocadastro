@@ -1,7 +1,7 @@
-venv
+myvenv
 *.idea
-*.sqlite3
+#*.sqlite3
 *pyc
 .DS_Store
 media
-.vscode
+

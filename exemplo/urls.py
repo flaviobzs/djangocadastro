@@ -1,4 +1,4 @@
-"""teste URL Configuration
+"""exemplo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -16,26 +16,35 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-#
-from django.urls import include
+#curso BASIQUINHO
+from contas.views import home
 
-#local do view(controller) e importa o método dele
+#local do view(controller) e importa o método dele exemplo (PROPRIO)
 from app_teste.views import index
 #from app_teste.views import index, listar
 from app_teste.views import listar, cadastro, atualizar, deletar
 
-from clientes import urls as clientes_urls
-from pessoas import urls as pessoas_urls
 
+#importar URLs da APP clientes CRUD MÉDIO
+from clientes import urls as clientes_urls
+#from pessoas import urls as pessoas_urls
+
+
+#importar função que tras urls de outro arquivo
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #teste PROPRIO
     path('index/', index),
     path('', listar, name='listar'),
     path('criar/', cadastro, name='novo'),
     path('atualizar/<int:pk>', atualizar, name='atualizar'),
     path('deletar/<int:pk>', deletar, name='deletar'),
-
-    path('pessoas/', include(pessoas_urls))
+    
+    #curso basiquinho
+    path('home/', home),
+    
+    #CRUD médio
+    path('pessoas/', include(clientes_urls)),
 ]
-

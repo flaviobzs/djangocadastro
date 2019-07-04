@@ -7,19 +7,23 @@ class Equipe(models.Model):
     descricao = models.CharField(max_length=250)
     data_criacao = models.DateTimeField(auto_now_add=True)
 
+#identificar o model pelo nome!!
     def __str__(self):
         return self.nome
+        #return self.nome + '' + self.xxx
 
 class Pessoa(models.Model):
     nome = models.CharField(max_length=250)
     sobrenome = models.CharField(max_length=250)
     data_nascimento = models.DateTimeField()
     idade = models.IntegerField()
-    nota = models.DecimalField(max_digits = 4, decimal_places=2)
-    equipe = models.ForeignKey(Equipe, on_delete=models.CASCADE)
+    nota = models.DecimalField(max_digits = 4, decimal_places = 2)
+    equipe = models.ForeignKey(Equipe, on_delete = models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Pessoas'
 
     def __str__(self):
         return self.nome
+
+        

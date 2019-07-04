@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>OLA DJANGO</h1>
+    <h3>Seja bem vindo!</h3>
+
+    <p>Agora são : {{ now }}</p>
+
+    <ul>
+      {% for transacao in transacoes %} {% if transacao == 't1' %}
+      <li>
+        <b>{{ transacao }}</b>
+      </li>
+      {% else%}
+      <li>{{ transacao }}</li>
+      {% endif %} {% endfor%}
+    </ul>
+  </body>
+</html>
