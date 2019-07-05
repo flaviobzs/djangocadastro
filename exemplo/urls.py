@@ -27,11 +27,16 @@ from app_teste.views import listar, cadastro, atualizar, deletar
 
 #importar URLs da APP clientes CRUD MÉDIO
 from clientes import urls as clientes_urls
-#from pessoas import urls as pessoas_urls
+from pessoas import urls as pessoas_urls
 
 
 #importar função que tras urls de outro arquivo
 from django.urls import include
+
+
+#importar views(controllers) de login
+#from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,5 +51,12 @@ urlpatterns = [
     path('home/', home),
     
     #CRUD médio
-    path('pessoas/', include(clientes_urls)),
-]
+    path('clientes/', include(clientes_urls)),
+
+    #CRUD com login
+    path('pessoas/', include(pessoas_urls)),
+
+    #rota de login
+    #path('login/', auth_views.login, name='login'),
+    #path('logout/', auth_views.logout, name='logout'),
+] 

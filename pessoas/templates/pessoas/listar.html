@@ -24,6 +24,9 @@
               <th scope="col">Idade</th>
               <th scope="col">Salario</th>
               <th scope="col">Descrição</th>
+              <th scope="col">Documentos</th>
+              <th scope="col">Ações</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -42,23 +45,21 @@
                 {{ person.salary }}
               </td>
               <td>
+                {{ person.bio }}
+              </td>
+              <td>
                 {{ person.doc }}
               </td>
               <td>
-                xxxx
-              </td>
-              <!-- <td>
-                <a
-                  class="btn btn-success"
-                  href="{% url 'atualizar' equipe.id %}"
+                <a class="btn btn-success" href="{% url 'updating' person.id %}"
                   >Atualizar</a
                 >
               </td>
               <td>
-                <a class="btn btn-danger" href="{% url 'deletar' equipe.id %}"
+                <a class="btn btn-danger" href="{% url 'deleting' person.id %}"
                   >Deletar</a
                 >
-              </td> -->
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -66,9 +67,9 @@
       </div>
     </div>
     <div class="container">
-      <!-- <div class="row">
-        <a class="btn btn-primary" href="{% url 'novo' %}">Novo</a>
-      </div> -->
+      <div class="row">
+        <a class="btn btn-primary" href="{% url 'creating' %}">Novo</a>
+      </div>
     </div>
 
     <script

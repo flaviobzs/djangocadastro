@@ -58,7 +58,7 @@ ROOT_URLCONF = 'exemplo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +122,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#configuração para estaticos!!!!
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'media'
+
+#url para logar no sistema
+LOGIN_URL ='/login/'
+
+#lugar a ser direcionado após logado
+LOGIN_REDIRECT_URL = 'reading'

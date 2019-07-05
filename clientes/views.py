@@ -17,7 +17,7 @@ def read(request):
 
     #2º forma de passar dados
     
-    persons = Equipe.objects.all()
+    persons = Person.objects.all()
 
     #forma de passar dados 
     #return render(request, 'clientes/listar.html', dado)
